@@ -1,0 +1,2311 @@
+{
+  "name": "DIGITAL_HT_APP.HT_VISITS",
+  "isExpanded": false,
+  "children": [
+      {
+          "name": "local_dt",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "children": [
+                                              {
+                                                  "name": "Step-5:",
+                                                  "isExpanded": false,
+                                                  "children": [
+                                                      {
+                                                          "name": "Step-6:",
+                                                          "isExpanded": false,
+                                                          "children": [
+                                                              {
+                                                                  "name": "Step-7:",
+                                                                  "isExpanded": false,
+                                                                  "children": [
+                                                                      {
+                                                                          "name": "Step-8:",
+                                                                          "isExpanded": false,
+                                                                          "children": [
+                                                                              {
+                                                                                  "name": "Step-9:",
+                                                                                  "isExpanded": false,
+                                                                                  "value": {
+                                                                                      "data": {
+                                                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_all_visits",
+                                                                                          "SOURCE TABLE INFO": [
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwmobile"
+                                                                                          ],
+                                                                                          "SOURCE COLUMNS INFO": [
+                                                                                              "Derivation: local_dt",
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestoreww",
+                                                                                              "Union: YES",
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwwechat",
+                                                                                              "Union: YES"
+                                                                                          ]
+                                                                                      }
+                                                                                  }
+                                                                              }
+                                                                          ],
+                                                                          "value": {
+                                                                              "data": {
+                                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_visit_prod_dim",
+                                                                                  "SOURCE TABLE INFO": [
+                                                                                      "DIGITAL_HT_APP.wrk_concise_all_visits a",
+                                                                                      "Join part: LEFT JOIN",
+                                                                                      "DIGITAL_HT_APP.wrk_ht_prod_dimension b",
+                                                                                      "ON condition: (a.Page_Hit_pst_dt = b.Page_Hit_pst_dt AND UPPER(a.product_list) = UPPER(b.product_list))"
+                                                                                  ],
+                                                                                  "SOURCE COLUMNS INFO": [
+                                                                                      "Derivation: local_dt"
+                                                                                  ]
+                                                                              }
+                                                                          }
+                                                                      }
+                                                                  ],
+                                                                  "value": {
+                                                                      "data": {
+                                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_visits_added_cols",
+                                                                          "SOURCE TABLE INFO": [
+                                                                              "DIGITAL_HT_APP.wrk_concise_all_visits"
+                                                                          ],
+                                                                          "SOURCE COLUMNS INFO": [
+                                                                              "Derivation: local_dt",
+                                                                              "DIGITAL_HT_APP.wrk_concise_visit_prod_dim UNION all ",
+                                                                              "Union: YES"
+                                                                          ]
+                                                                      }
+                                                                  }
+                                                              }
+                                                          ],
+                                                          "value": {
+                                                              "data": {
+                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                                                  "SOURCE TABLE INFO": [
+                                                                      "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                                                  ],
+                                                                  "SOURCE COLUMNS INFO": [
+                                                                      "Derivation: local_dt"
+                                                                  ]
+                                                              }
+                                                          }
+                                                      }
+                                                  ],
+                                                  "value": {
+                                                      "data": {
+                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                          "SOURCE TABLE INFO": [
+                                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                          ],
+                                                          "SOURCE COLUMNS INFO": [
+                                                              "Derivation: local_dt"
+                                                          ]
+                                                      }
+                                                  }
+                                              }
+                                          ],
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: local_dt"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_flat_visit_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: local_dt"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: local_dt"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: local_dt"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "aos_country_txt",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "children": [
+                                              {
+                                                  "name": "Step-5:",
+                                                  "isExpanded": false,
+                                                  "children": [
+                                                      {
+                                                          "name": "Step-6:",
+                                                          "isExpanded": false,
+                                                          "children": [
+                                                              {
+                                                                  "name": "Step-7:",
+                                                                  "isExpanded": false,
+                                                                  "children": [
+                                                                      {
+                                                                          "name": "Step-8:",
+                                                                          "isExpanded": false,
+                                                                          "children": [
+                                                                              {
+                                                                                  "name": "Step-9:",
+                                                                                  "isExpanded": false,
+                                                                                  "value": {
+                                                                                      "data": {
+                                                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_all_visits",
+                                                                                          "SOURCE TABLE INFO": [
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwmobile"
+                                                                                          ],
+                                                                                          "SOURCE COLUMNS INFO": [
+                                                                                              "Derivation: UPPER(aos_country_txt) as aos_country_txt",
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestoreww",
+                                                                                              "Union: YES",
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwwechat",
+                                                                                              "Union: YES",
+                                                                                              "Derivation: aos_country_txt"
+                                                                                          ]
+                                                                                      }
+                                                                                  }
+                                                                              }
+                                                                          ],
+                                                                          "value": {
+                                                                              "data": {
+                                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_visit_prod_dim",
+                                                                                  "SOURCE TABLE INFO": [
+                                                                                      "DIGITAL_HT_APP.wrk_concise_all_visits a",
+                                                                                      "Join part: LEFT JOIN",
+                                                                                      "DIGITAL_HT_APP.wrk_ht_prod_dimension b",
+                                                                                      "ON condition: (a.Page_Hit_pst_dt = b.Page_Hit_pst_dt AND UPPER(a.product_list) = UPPER(b.product_list))"
+                                                                                  ],
+                                                                                  "SOURCE COLUMNS INFO": [
+                                                                                      "Derivation: aos_country_txt"
+                                                                                  ]
+                                                                              }
+                                                                          }
+                                                                      }
+                                                                  ],
+                                                                  "value": {
+                                                                      "data": {
+                                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_visits_added_cols",
+                                                                          "SOURCE TABLE INFO": [
+                                                                              "DIGITAL_HT_APP.wrk_concise_all_visits"
+                                                                          ],
+                                                                          "SOURCE COLUMNS INFO": [
+                                                                              "Derivation: aos_country_txt",
+                                                                              "DIGITAL_HT_APP.wrk_concise_visit_prod_dim UNION all ",
+                                                                              "Union: YES"
+                                                                          ]
+                                                                      }
+                                                                  }
+                                                              }
+                                                          ],
+                                                          "value": {
+                                                              "data": {
+                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                                                  "SOURCE TABLE INFO": [
+                                                                      "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                                                  ],
+                                                                  "SOURCE COLUMNS INFO": [
+                                                                      "Derivation: aos_country_txt"
+                                                                  ]
+                                                              }
+                                                          }
+                                                      }
+                                                  ],
+                                                  "value": {
+                                                      "data": {
+                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                          "SOURCE TABLE INFO": [
+                                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                          ],
+                                                          "SOURCE COLUMNS INFO": [
+                                                              "Derivation: aos_country_txt"
+                                                          ]
+                                                      }
+                                                  }
+                                              }
+                                          ],
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: aos_country_txt"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_flat_visit_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: aos_country_txt"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: aos_country_txt"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: aos_country_txt"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "adobebounce",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "children": [
+                                              {
+                                                  "name": "Step-5:",
+                                                  "isExpanded": false,
+                                                  "children": [
+                                                      {
+                                                          "name": "Step-6:",
+                                                          "isExpanded": false,
+                                                          "value": {
+                                                              "data": {
+                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                                                  "SOURCE TABLE INFO": [
+                                                                      "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                                                  ],
+                                                                  "SOURCE COLUMNS INFO": [
+                                                                      "Derivation: MIN(adobe_bounce_ind) AS adobebounce",
+                                                                      "Derivation: adobebounce"
+                                                                  ]
+                                                              }
+                                                          }
+                                                      }
+                                                  ],
+                                                  "value": {
+                                                      "data": {
+                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                          "SOURCE TABLE INFO": [
+                                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                          ],
+                                                          "SOURCE COLUMNS INFO": [
+                                                              "Derivation: AdobeBounce",
+                                                              "Derivation: adobebounce"
+                                                          ]
+                                                      }
+                                                  }
+                                              }
+                                          ],
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: AdobeBounce",
+                                                      "Derivation: adobebounce"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_flat_visit_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: MIN(adobe_bounce_ind) AS adobebounce",
+                                              "Derivation: adobebounce"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: AdobeBounce"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: AdobeBounce"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "geo",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: CASE WHEN UPPER(aos_country_txt) = 'JP' THEN 'Japan' WHEN UPPER(geo_cd) = 'AMR' THEN 'Americas' WHEN UPPER(geo_cd) = 'EMEIA' THEN 'Europe' WHEN UPPER(geo_cd) = 'GTCHINA' THEN 'Greater China' WHEN UPPER(geo_cd) = 'RESTAPAC' THEN 'RPAC' END AS geo",
+                                                      "Derivation: geo"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: CASE WHEN UPPER(aos_country_txt) = 'JP' THEN 'Japan' WHEN UPPER(geo_cd) = 'AMR' THEN 'Americas' WHEN UPPER(geo_cd) = 'EMEIA' THEN 'Europe' WHEN UPPER(geo_cd) = 'GTCHINA' THEN 'Greater China' WHEN UPPER(geo_cd) = 'RESTAPAC' THEN 'RPAC' END AS geo",
+                                              "Derivation: geo"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: CASE WHEN UPPER(aos_country_txt) = 'JP' THEN 'Japan' WHEN UPPER(geo_cd) = 'AMR' THEN 'Americas' WHEN UPPER(geo_cd) = 'EMEIA' THEN 'Europe' WHEN UPPER(geo_cd) = 'GTCHINA' THEN 'Greater China' WHEN UPPER(geo_cd) = 'RESTAPAC' THEN 'RPAC' END AS geo",
+                                      "Derivation: geo"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: CASE WHEN UPPER(aos_country_txt) = 'JP' THEN 'Japan' WHEN UPPER(geo_cd) = 'AMR' THEN 'Americas' WHEN UPPER(geo_cd) = 'EMEIA' THEN 'Europe' WHEN UPPER(geo_cd) = 'GTCHINA' THEN 'Greater China' WHEN UPPER(geo_cd) = 'RESTAPAC' THEN 'RPAC' END AS geo",
+                              "Derivation: geo"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "country",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: CASE WHEN UPPER(aos_country_txt) = 'BR' THEN 'Brazil' WHEN UPPER(aos_country_txt) = 'CA' THEN 'Canada' WHEN UPPER(aos_country_txt) = 'MX' THEN 'Mexico' WHEN UPPER(aos_country_txt) = 'US' THEN 'USA' WHEN UPPER(aos_country_txt) = 'XF' THEN 'Canada' WHEN UPPER(aos_country_txt) = 'AE' THEN 'UAE' WHEN UPPER(aos_country_txt) = 'AT' THEN 'Austria' WHEN UPPER(aos_country_txt) = 'BE' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'BE-FR' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'BE-NL' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'CH' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CH-DE' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CH-FR' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CZ' THEN 'Czech Republic' WHEN UPPER(aos_country_txt) = 'DE' THEN 'Germany' WHEN UPPER(aos_country_txt) = 'DK' THEN 'Denmark' WHEN UPPER(aos_country_txt) = 'ES' THEN 'Spain' WHEN UPPER(aos_country_txt) = 'FI' THEN 'Finland' WHEN UPPER(aos_country_txt) = 'FR' THEN 'France' WHEN UPPER(aos_country_txt) = 'HU' THEN 'Hungary' WHEN UPPER(aos_country_txt) = 'IE' THEN 'Ireland' WHEN UPPER(aos_country_txt) = 'IN' THEN 'India' WHEN UPPER(aos_country_txt) = 'IT' THEN 'Italy' WHEN UPPER(aos_country_txt) = 'LU' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'NL' THEN 'Netherlands' WHEN UPPER(aos_country_txt) = 'NO' THEN 'Norway' WHEN UPPER(aos_country_txt) = 'PL' THEN 'Poland' WHEN UPPER(aos_country_txt) = 'PT' THEN 'Portugal' WHEN UPPER(aos_country_txt) = 'RU' THEN 'Russia' WHEN UPPER(aos_country_txt) = 'SE' THEN 'Sweden' WHEN UPPER(aos_country_txt) = 'TR' THEN 'Turkey' WHEN UPPER(aos_country_txt) = 'UK' THEN 'UK' WHEN UPPER(aos_country_txt) = 'GB' THEN 'UK' WHEN UPPER(aos_country_txt) = 'ZA' THEN 'South Africa' WHEN UPPER(aos_country_txt) = 'CN' THEN 'China' WHEN UPPER(aos_country_txt) = 'HK' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'HK-EN' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'HK-ZH' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'TW' THEN 'Taiwan' WHEN UPPER(aos_country_txt) = 'JP' THEN 'Japan' WHEN UPPER(aos_country_txt) = 'AU' THEN 'Australia' WHEN UPPER(aos_country_txt) = 'ID' THEN 'Indonesia' WHEN UPPER(aos_country_txt) = 'KR' THEN 'Korea' WHEN UPPER(aos_country_txt) = 'MY' THEN 'Malaysia' WHEN UPPER(aos_country_txt) = 'NZ' THEN 'New Zealand' WHEN UPPER(aos_country_txt) = 'PH' THEN 'Philippines' WHEN UPPER(aos_country_txt) = 'SG' THEN 'Singapore' WHEN UPPER(aos_country_txt) = 'TH' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'TH-EN' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'TH-TH' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'VN' THEN 'Vietnam' WHEN UPPER(aos_country_txt) = 'IS' THEN 'Iceland' WHEN UPPER(aos_country_txt) = 'CL' THEN 'Chile' ELSE aos_country_txt END AS country",
+                                                      "Derivation: country"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: CASE WHEN UPPER(aos_country_txt) = 'BR' THEN 'Brazil' WHEN UPPER(aos_country_txt) = 'CA' THEN 'Canada' WHEN UPPER(aos_country_txt) = 'MX' THEN 'Mexico' WHEN UPPER(aos_country_txt) = 'US' THEN 'USA' WHEN UPPER(aos_country_txt) = 'XF' THEN 'Canada' WHEN UPPER(aos_country_txt) = 'AE' THEN 'UAE' WHEN UPPER(aos_country_txt) = 'AT' THEN 'Austria' WHEN UPPER(aos_country_txt) = 'BE' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'BE-FR' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'BE-NL' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'CH' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CH-DE' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CH-FR' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CZ' THEN 'Czech Republic' WHEN UPPER(aos_country_txt) = 'DE' THEN 'Germany' WHEN UPPER(aos_country_txt) = 'DK' THEN 'Denmark' WHEN UPPER(aos_country_txt) = 'ES' THEN 'Spain' WHEN UPPER(aos_country_txt) = 'FI' THEN 'Finland' WHEN UPPER(aos_country_txt) = 'FR' THEN 'France' WHEN UPPER(aos_country_txt) = 'HU' THEN 'Hungary' WHEN UPPER(aos_country_txt) = 'IE' THEN 'Ireland' WHEN UPPER(aos_country_txt) = 'IN' THEN 'India' WHEN UPPER(aos_country_txt) = 'IT' THEN 'Italy' WHEN UPPER(aos_country_txt) = 'LU' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'NL' THEN 'Netherlands' WHEN UPPER(aos_country_txt) = 'NO' THEN 'Norway' WHEN UPPER(aos_country_txt) = 'PL' THEN 'Poland' WHEN UPPER(aos_country_txt) = 'PT' THEN 'Portugal' WHEN UPPER(aos_country_txt) = 'RU' THEN 'Russia' WHEN UPPER(aos_country_txt) = 'SE' THEN 'Sweden' WHEN UPPER(aos_country_txt) = 'TR' THEN 'Turkey' WHEN UPPER(aos_country_txt) = 'UK' THEN 'UK' WHEN UPPER(aos_country_txt) = 'GB' THEN 'UK' WHEN UPPER(aos_country_txt) = 'ZA' THEN 'South Africa' WHEN UPPER(aos_country_txt) = 'CN' THEN 'China' WHEN UPPER(aos_country_txt) = 'HK' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'HK-EN' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'HK-ZH' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'TW' THEN 'Taiwan' WHEN UPPER(aos_country_txt) = 'JP' THEN 'Japan' WHEN UPPER(aos_country_txt) = 'AU' THEN 'Australia' WHEN UPPER(aos_country_txt) = 'ID' THEN 'Indonesia' WHEN UPPER(aos_country_txt) = 'KR' THEN 'Korea' WHEN UPPER(aos_country_txt) = 'MY' THEN 'Malaysia' WHEN UPPER(aos_country_txt) = 'NZ' THEN 'New Zealand' WHEN UPPER(aos_country_txt) = 'PH' THEN 'Philippines' WHEN UPPER(aos_country_txt) = 'SG' THEN 'Singapore' WHEN UPPER(aos_country_txt) = 'TH' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'TH-EN' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'TH-TH' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'VN' THEN 'Vietnam' WHEN UPPER(aos_country_txt) = 'IS' THEN 'Iceland' WHEN UPPER(aos_country_txt) = 'CL' THEN 'Chile' ELSE aos_country_txt END AS country",
+                                              "Derivation: country"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: CASE WHEN UPPER(aos_country_txt) = 'BR' THEN 'Brazil' WHEN UPPER(aos_country_txt) = 'CA' THEN 'Canada' WHEN UPPER(aos_country_txt) = 'MX' THEN 'Mexico' WHEN UPPER(aos_country_txt) = 'US' THEN 'USA' WHEN UPPER(aos_country_txt) = 'XF' THEN 'Canada' WHEN UPPER(aos_country_txt) = 'AE' THEN 'UAE' WHEN UPPER(aos_country_txt) = 'AT' THEN 'Austria' WHEN UPPER(aos_country_txt) = 'BE' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'BE-FR' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'BE-NL' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'CH' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CH-DE' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CH-FR' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CZ' THEN 'Czech Republic' WHEN UPPER(aos_country_txt) = 'DE' THEN 'Germany' WHEN UPPER(aos_country_txt) = 'DK' THEN 'Denmark' WHEN UPPER(aos_country_txt) = 'ES' THEN 'Spain' WHEN UPPER(aos_country_txt) = 'FI' THEN 'Finland' WHEN UPPER(aos_country_txt) = 'FR' THEN 'France' WHEN UPPER(aos_country_txt) = 'HU' THEN 'Hungary' WHEN UPPER(aos_country_txt) = 'IE' THEN 'Ireland' WHEN UPPER(aos_country_txt) = 'IN' THEN 'India' WHEN UPPER(aos_country_txt) = 'IT' THEN 'Italy' WHEN UPPER(aos_country_txt) = 'LU' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'NL' THEN 'Netherlands' WHEN UPPER(aos_country_txt) = 'NO' THEN 'Norway' WHEN UPPER(aos_country_txt) = 'PL' THEN 'Poland' WHEN UPPER(aos_country_txt) = 'PT' THEN 'Portugal' WHEN UPPER(aos_country_txt) = 'RU' THEN 'Russia' WHEN UPPER(aos_country_txt) = 'SE' THEN 'Sweden' WHEN UPPER(aos_country_txt) = 'TR' THEN 'Turkey' WHEN UPPER(aos_country_txt) = 'UK' THEN 'UK' WHEN UPPER(aos_country_txt) = 'GB' THEN 'UK' WHEN UPPER(aos_country_txt) = 'ZA' THEN 'South Africa' WHEN UPPER(aos_country_txt) = 'CN' THEN 'China' WHEN UPPER(aos_country_txt) = 'HK' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'HK-EN' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'HK-ZH' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'TW' THEN 'Taiwan' WHEN UPPER(aos_country_txt) = 'JP' THEN 'Japan' WHEN UPPER(aos_country_txt) = 'AU' THEN 'Australia' WHEN UPPER(aos_country_txt) = 'ID' THEN 'Indonesia' WHEN UPPER(aos_country_txt) = 'KR' THEN 'Korea' WHEN UPPER(aos_country_txt) = 'MY' THEN 'Malaysia' WHEN UPPER(aos_country_txt) = 'NZ' THEN 'New Zealand' WHEN UPPER(aos_country_txt) = 'PH' THEN 'Philippines' WHEN UPPER(aos_country_txt) = 'SG' THEN 'Singapore' WHEN UPPER(aos_country_txt) = 'TH' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'TH-EN' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'TH-TH' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'VN' THEN 'Vietnam' WHEN UPPER(aos_country_txt) = 'IS' THEN 'Iceland' WHEN UPPER(aos_country_txt) = 'CL' THEN 'Chile' ELSE aos_country_txt END AS country",
+                                      "Derivation: country"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: CASE WHEN UPPER(aos_country_txt) = 'BR' THEN 'Brazil' WHEN UPPER(aos_country_txt) = 'CA' THEN 'Canada' WHEN UPPER(aos_country_txt) = 'MX' THEN 'Mexico' WHEN UPPER(aos_country_txt) = 'US' THEN 'USA' WHEN UPPER(aos_country_txt) = 'XF' THEN 'Canada' WHEN UPPER(aos_country_txt) = 'AE' THEN 'UAE' WHEN UPPER(aos_country_txt) = 'AT' THEN 'Austria' WHEN UPPER(aos_country_txt) = 'BE' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'BE-FR' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'BE-NL' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'CH' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CH-DE' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CH-FR' THEN 'Switzerland' WHEN UPPER(aos_country_txt) = 'CZ' THEN 'Czech Republic' WHEN UPPER(aos_country_txt) = 'DE' THEN 'Germany' WHEN UPPER(aos_country_txt) = 'DK' THEN 'Denmark' WHEN UPPER(aos_country_txt) = 'ES' THEN 'Spain' WHEN UPPER(aos_country_txt) = 'FI' THEN 'Finland' WHEN UPPER(aos_country_txt) = 'FR' THEN 'France' WHEN UPPER(aos_country_txt) = 'HU' THEN 'Hungary' WHEN UPPER(aos_country_txt) = 'IE' THEN 'Ireland' WHEN UPPER(aos_country_txt) = 'IN' THEN 'India' WHEN UPPER(aos_country_txt) = 'IT' THEN 'Italy' WHEN UPPER(aos_country_txt) = 'LU' THEN 'Belgium/Luxemburg' WHEN UPPER(aos_country_txt) = 'NL' THEN 'Netherlands' WHEN UPPER(aos_country_txt) = 'NO' THEN 'Norway' WHEN UPPER(aos_country_txt) = 'PL' THEN 'Poland' WHEN UPPER(aos_country_txt) = 'PT' THEN 'Portugal' WHEN UPPER(aos_country_txt) = 'RU' THEN 'Russia' WHEN UPPER(aos_country_txt) = 'SE' THEN 'Sweden' WHEN UPPER(aos_country_txt) = 'TR' THEN 'Turkey' WHEN UPPER(aos_country_txt) = 'UK' THEN 'UK' WHEN UPPER(aos_country_txt) = 'GB' THEN 'UK' WHEN UPPER(aos_country_txt) = 'ZA' THEN 'South Africa' WHEN UPPER(aos_country_txt) = 'CN' THEN 'China' WHEN UPPER(aos_country_txt) = 'HK' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'HK-EN' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'HK-ZH' THEN 'Hong Kong' WHEN UPPER(aos_country_txt) = 'TW' THEN 'Taiwan' WHEN UPPER(aos_country_txt) = 'JP' THEN 'Japan' WHEN UPPER(aos_country_txt) = 'AU' THEN 'Australia' WHEN UPPER(aos_country_txt) = 'ID' THEN 'Indonesia' WHEN UPPER(aos_country_txt) = 'KR' THEN 'Korea' WHEN UPPER(aos_country_txt) = 'MY' THEN 'Malaysia' WHEN UPPER(aos_country_txt) = 'NZ' THEN 'New Zealand' WHEN UPPER(aos_country_txt) = 'PH' THEN 'Philippines' WHEN UPPER(aos_country_txt) = 'SG' THEN 'Singapore' WHEN UPPER(aos_country_txt) = 'TH' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'TH-EN' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'TH-TH' THEN 'Thailand' WHEN UPPER(aos_country_txt) = 'VN' THEN 'Vietnam' WHEN UPPER(aos_country_txt) = 'IS' THEN 'Iceland' WHEN UPPER(aos_country_txt) = 'CL' THEN 'Chile' ELSE aos_country_txt END AS country",
+                              "Derivation: country"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "device",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "children": [
+                                              {
+                                                  "name": "Step-5:",
+                                                  "isExpanded": false,
+                                                  "children": [
+                                                      {
+                                                          "name": "Step-6:",
+                                                          "isExpanded": false,
+                                                          "children": [
+                                                              {
+                                                                  "name": "Step-7:",
+                                                                  "isExpanded": false,
+                                                                  "children": [
+                                                                      {
+                                                                          "name": "Step-8:",
+                                                                          "isExpanded": false,
+                                                                          "children": [
+                                                                              {
+                                                                                  "name": "Step-9:",
+                                                                                  "isExpanded": false,
+                                                                                  "value": {
+                                                                                      "data": {
+                                                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_all_visits",
+                                                                                          "SOURCE TABLE INFO": [
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwmobile"
+                                                                                          ],
+                                                                                          "SOURCE COLUMNS INFO": [
+                                                                                              "Derivation: device",
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestoreww",
+                                                                                              "Union: YES",
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwwechat",
+                                                                                              "Union: YES"
+                                                                                          ]
+                                                                                      }
+                                                                                  }
+                                                                              }
+                                                                          ],
+                                                                          "value": {
+                                                                              "data": {
+                                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_visit_prod_dim",
+                                                                                  "SOURCE TABLE INFO": [
+                                                                                      "DIGITAL_HT_APP.wrk_concise_all_visits a",
+                                                                                      "Join part: LEFT JOIN",
+                                                                                      "DIGITAL_HT_APP.wrk_ht_prod_dimension b",
+                                                                                      "ON condition: (a.Page_Hit_pst_dt = b.Page_Hit_pst_dt AND UPPER(a.product_list) = UPPER(b.product_list))"
+                                                                                  ],
+                                                                                  "SOURCE COLUMNS INFO": [
+                                                                                      "Derivation: device"
+                                                                                  ]
+                                                                              }
+                                                                          }
+                                                                      }
+                                                                  ],
+                                                                  "value": {
+                                                                      "data": {
+                                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_visits_added_cols",
+                                                                          "SOURCE TABLE INFO": [
+                                                                              "DIGITAL_HT_APP.wrk_concise_all_visits"
+                                                                          ],
+                                                                          "SOURCE COLUMNS INFO": [
+                                                                              "Derivation: device",
+                                                                              "DIGITAL_HT_APP.wrk_concise_visit_prod_dim UNION all ",
+                                                                              "Union: YES"
+                                                                          ]
+                                                                      }
+                                                                  }
+                                                              }
+                                                          ],
+                                                          "value": {
+                                                              "data": {
+                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                                                  "SOURCE TABLE INFO": [
+                                                                      "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                                                  ],
+                                                                  "SOURCE COLUMNS INFO": [
+                                                                      "Derivation: MIN(device) AS device",
+                                                                      "Derivation: device"
+                                                                  ]
+                                                              }
+                                                          }
+                                                      }
+                                                  ],
+                                                  "value": {
+                                                      "data": {
+                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                          "SOURCE TABLE INFO": [
+                                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                          ],
+                                                          "SOURCE COLUMNS INFO": [
+                                                              "Derivation: CASE WHEN UPPER(source_id) = 'WECHAT' THEN 'AOW' WHEN UPPER(device) = 'TELESALES' THEN 'Telesales' WHEN UPPER(source_id) = 'IPHONE' THEN 'ASA' WHEN UPPER(device) IN ('MAC','PC') THEN 'Desktop' WHEN UPPER(device) IN ('IPHONE','IPAD') THEN 'MOW' ELSE 'other' END AS device",
+                                                              "Derivation: device"
+                                                          ]
+                                                      }
+                                                  }
+                                              }
+                                          ],
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: CASE WHEN UPPER(source_id) = 'WECHAT' THEN 'AOW' WHEN UPPER(device) = 'TELESALES' THEN 'Telesales' WHEN UPPER(source_id) = 'IPHONE' THEN 'ASA' WHEN UPPER(device) IN ('MAC','PC') THEN 'Desktop' WHEN UPPER(device) IN ('IPHONE','IPAD') THEN 'MOW' ELSE 'other' END AS device",
+                                                      "Derivation: device"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_flat_visit_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: MIN(device) AS device",
+                                              "Derivation: device"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: CASE WHEN UPPER(source_id) = 'WECHAT' THEN 'AOW' WHEN UPPER(device) = 'TELESALES' THEN 'Telesales' WHEN UPPER(source_id) = 'IPHONE' THEN 'ASA' WHEN UPPER(device) IN ('MAC','PC') THEN 'Desktop' WHEN UPPER(device) IN ('IPHONE','IPAD') THEN 'MOW' ELSE 'other' END AS device",
+                                      "Derivation: device"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: CASE WHEN UPPER(source_id) = 'WECHAT' THEN 'AOW' WHEN UPPER(device) = 'TELESALES' THEN 'Telesales' WHEN UPPER(source_id) = 'IPHONE' THEN 'ASA' WHEN UPPER(device) IN ('MAC','PC') THEN 'Desktop' WHEN UPPER(device) IN ('IPHONE','IPAD') THEN 'MOW' ELSE 'other' END AS device",
+                              "Derivation: device"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "subdevice",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: CASE WHEN UPPER(source_id) = 'WECHAT' THEN 'AOW' WHEN UPPER(source_id) = 'IPHONE' AND UPPER(user_agent) LIKE '%IPAD%' THEN 'App - iPad' WHEN UPPER(device) IN ('OTHER MOBILE') THEN 'Other Mobile' ELSE device END AS SubDevice",
+                                                      "Derivation: subdevice"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: CASE WHEN UPPER(source_id) = 'WECHAT' THEN 'AOW' WHEN UPPER(source_id) = 'IPHONE' AND UPPER(user_agent) LIKE '%IPAD%' THEN 'App - iPad' WHEN UPPER(device) IN ('OTHER MOBILE') THEN 'Other Mobile' ELSE device END AS SubDevice",
+                                              "Derivation: subdevice"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: CASE WHEN UPPER(source_id) = 'WECHAT' THEN 'AOW' WHEN UPPER(source_id) = 'IPHONE' AND UPPER(user_agent) LIKE '%IPAD%' THEN 'App - iPad' WHEN UPPER(device) IN ('OTHER MOBILE') THEN 'Other Mobile' ELSE device END AS SubDevice",
+                                      "Derivation: SubDevice"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: CASE WHEN UPPER(source_id) = 'WECHAT' THEN 'AOW' WHEN UPPER(source_id) = 'IPHONE' AND UPPER(user_agent) LIKE '%IPAD%' THEN 'App - iPad' WHEN UPPER(device) IN ('OTHER MOBILE') THEN 'Other Mobile' ELSE device END AS SubDevice",
+                              "Derivation: SubDevice"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "domestic_ind",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "children": [
+                                              {
+                                                  "name": "Step-5:",
+                                                  "isExpanded": false,
+                                                  "children": [
+                                                      {
+                                                          "name": "Step-6:",
+                                                          "isExpanded": false,
+                                                          "children": [
+                                                              {
+                                                                  "name": "Step-7:",
+                                                                  "isExpanded": false,
+                                                                  "children": [
+                                                                      {
+                                                                          "name": "Step-8:",
+                                                                          "isExpanded": false,
+                                                                          "children": [
+                                                                              {
+                                                                                  "name": "Step-9:",
+                                                                                  "isExpanded": false,
+                                                                                  "value": {
+                                                                                      "data": {
+                                                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_all_visits",
+                                                                                          "SOURCE TABLE INFO": [
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwmobile"
+                                                                                          ],
+                                                                                          "SOURCE COLUMNS INFO": [
+                                                                                              "Derivation: domestic_ind",
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestoreww",
+                                                                                              "Union: YES",
+                                                                                              "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwwechat",
+                                                                                              "Union: YES"
+                                                                                          ]
+                                                                                      }
+                                                                                  }
+                                                                              }
+                                                                          ],
+                                                                          "value": {
+                                                                              "data": {
+                                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_visit_prod_dim",
+                                                                                  "SOURCE TABLE INFO": [
+                                                                                      "DIGITAL_HT_APP.wrk_concise_all_visits a",
+                                                                                      "Join part: LEFT JOIN",
+                                                                                      "DIGITAL_HT_APP.wrk_ht_prod_dimension b",
+                                                                                      "ON condition: (a.Page_Hit_pst_dt = b.Page_Hit_pst_dt AND UPPER(a.product_list) = UPPER(b.product_list))"
+                                                                                  ],
+                                                                                  "SOURCE COLUMNS INFO": [
+                                                                                      "Derivation: domestic_ind"
+                                                                                  ]
+                                                                              }
+                                                                          }
+                                                                      }
+                                                                  ],
+                                                                  "value": {
+                                                                      "data": {
+                                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_visits_added_cols",
+                                                                          "SOURCE TABLE INFO": [
+                                                                              "DIGITAL_HT_APP.wrk_concise_all_visits"
+                                                                          ],
+                                                                          "SOURCE COLUMNS INFO": [
+                                                                              "Derivation: domestic_ind",
+                                                                              "DIGITAL_HT_APP.wrk_concise_visit_prod_dim UNION all ",
+                                                                              "Union: YES"
+                                                                          ]
+                                                                      }
+                                                                  }
+                                                              }
+                                                          ],
+                                                          "value": {
+                                                              "data": {
+                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                                                  "SOURCE TABLE INFO": [
+                                                                      "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                                                  ],
+                                                                  "SOURCE COLUMNS INFO": [
+                                                                      "Derivation: MAX(domestic_ind) AS domestic_ind",
+                                                                      "Derivation: domestic_ind"
+                                                                  ]
+                                                              }
+                                                          }
+                                                      }
+                                                  ],
+                                                  "value": {
+                                                      "data": {
+                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                          "SOURCE TABLE INFO": [
+                                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                          ],
+                                                          "SOURCE COLUMNS INFO": [
+                                                              "Derivation: domestic_ind"
+                                                          ]
+                                                      }
+                                                  }
+                                              }
+                                          ],
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: domestic_ind"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_flat_visit_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: MAX(domestic_ind) AS domestic_ind",
+                                              "Derivation: domestic_ind"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: domestic_ind"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: domestic_ind"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "program",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "children": [
+                                              {
+                                                  "name": "Step-5:",
+                                                  "isExpanded": false,
+                                                  "children": [
+                                                      {
+                                                          "name": "Step-6:",
+                                                          "isExpanded": false,
+                                                          "children": [
+                                                              {
+                                                                  "name": "Step-7:",
+                                                                  "isExpanded": false,
+                                                                  "children": [
+                                                                      {
+                                                                          "name": "Step-8:",
+                                                                          "isExpanded": false,
+                                                                          "value": {
+                                                                              "data": {
+                                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_all_visits",
+                                                                                  "SOURCE TABLE INFO": [
+                                                                                      "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwmobile"
+                                                                                  ],
+                                                                                  "SOURCE COLUMNS INFO": [
+                                                                                      "Derivation: program",
+                                                                                      "digital_ht_app.ht_all_page_hit_concise_lite_applestoreww",
+                                                                                      "Union: YES",
+                                                                                      "digital_ht_app.ht_all_page_hit_concise_lite_applestorewwwechat",
+                                                                                      "Union: YES"
+                                                                                  ]
+                                                                              }
+                                                                          }
+                                                                      }
+                                                                  ],
+                                                                  "value": {
+                                                                      "data": {
+                                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_concise_visit_prod_dim",
+                                                                          "SOURCE TABLE INFO": [
+                                                                              "DIGITAL_HT_APP.wrk_concise_all_visits a",
+                                                                              "Join part: LEFT JOIN",
+                                                                              "DIGITAL_HT_APP.wrk_ht_prod_dimension b",
+                                                                              "ON condition: (a.Page_Hit_pst_dt = b.Page_Hit_pst_dt AND UPPER(a.product_list) = UPPER(b.product_list))"
+                                                                          ],
+                                                                          "SOURCE COLUMNS INFO": [
+                                                                              "Derivation: program"
+                                                                          ]
+                                                                      }
+                                                                  }
+                                                              }
+                                                          ],
+                                                          "value": {
+                                                              "data": {
+                                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_visits_added_cols",
+                                                                  "SOURCE TABLE INFO": [
+                                                                      "DIGITAL_HT_APP.wrk_concise_all_visits"
+                                                                  ],
+                                                                  "SOURCE COLUMNS INFO": [
+                                                                      "Derivation: program",
+                                                                      "DIGITAL_HT_APP.wrk_concise_visit_prod_dim UNION all ",
+                                                                      "Union: YES"
+                                                                  ]
+                                                              }
+                                                          }
+                                                      }
+                                                  ],
+                                                  "value": {
+                                                      "data": {
+                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                                          "SOURCE TABLE INFO": [
+                                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                                          ],
+                                                          "SOURCE COLUMNS INFO": [
+                                                              "Derivation: MAX(NewProgramPage1_txt) AS Program",
+                                                              "Derivation: Program"
+                                                          ]
+                                                      }
+                                                  }
+                                              }
+                                          ],
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: Program",
+                                                      "Derivation: program"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: Program",
+                                              "Derivation: program"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: NewProgramPage1_txt as program",
+                                      "Derivation: Program"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: NewProgramPage1_txt as program",
+                              "Derivation: Program"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "programteam",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "children": [
+                                              {
+                                                  "name": "Step-5:",
+                                                  "isExpanded": false,
+                                                  "value": {
+                                                      "data": {
+                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                                          "SOURCE TABLE INFO": [
+                                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                                          ],
+                                                          "SOURCE COLUMNS INFO": [
+                                                              "Derivation: MAX(NewProgramTeamPage1_txt) AS ProgramTeam",
+                                                              "Derivation: ProgramTeam"
+                                                          ]
+                                                      }
+                                                  }
+                                              }
+                                          ],
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: ProgramTeam",
+                                                      "Derivation: programteam"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: ProgramTeam",
+                                              "Derivation: programteam"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: NewProgramDetailPage1_txt as programteam",
+                                      "Derivation: ProgramTeam"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: NewProgramDetailPage1_txt as programteam",
+                              "Derivation: ProgramTeam"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "programdetail",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "children": [
+                                              {
+                                                  "name": "Step-5:",
+                                                  "isExpanded": false,
+                                                  "value": {
+                                                      "data": {
+                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                                          "SOURCE TABLE INFO": [
+                                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                                          ],
+                                                          "SOURCE COLUMNS INFO": [
+                                                              "Derivation: MAX(NewProgramDetailPage1_txt) AS ProgramDetail",
+                                                              "Derivation: ProgramDetail"
+                                                          ]
+                                                      }
+                                                  }
+                                              }
+                                          ],
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: ProgramDetail",
+                                                      "Derivation: programdetail"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: ProgramDetail",
+                                              "Derivation: programdetail"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: NewProgramTeamPage1_txt as programdetail",
+                                      "Derivation: ProgramDetail"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: NewProgramTeamPage1_txt as programdetail",
+                              "Derivation: ProgramDetail"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "browser",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: CASE WHEN UPPER(browser_name) LIKE ANY ('SAFARI%','MOBILE SAFARI%') THEN 'Safari' ELSE 'Other' END AS browser",
+                                                      "Derivation: browser"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: CASE WHEN UPPER(browser_name) LIKE ANY ('SAFARI%','MOBILE SAFARI%') THEN 'Safari' ELSE 'Other' END AS browser",
+                                              "Derivation: browser"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: CASE WHEN UPPER(browser_name) LIKE ANY ('SAFARI%','MOBILE SAFARI%') THEN 'Safari' ELSE 'Other' END AS browser",
+                                      "Derivation: browser"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: CASE WHEN UPPER(browser_name) LIKE ANY ('SAFARI%','MOBILE SAFARI%') THEN 'Safari' ELSE 'Other' END AS browser",
+                              "Derivation: browser"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "segment",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": []
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: Segment_Visit_Seg AS Segment",
+                                              "Derivation: segment"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: 'All' AS Segment",
+                                      "Derivation: Segment"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: Segment_Flat_Seg as Segment",
+                              "Derivation: Segment"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "segmentisentrysegment_ind",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: 1 AS SegmentIsEntrySegment_ind",
+                                                      "Derivation: segmentisentrysegment_ind"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: CASE WHEN Segment_Visit_Seg = pg1segment THEN 1 ELSE 0 END AS SegmentIsEntrySegment_ind",
+                                              "Derivation: segmentisentrysegment_ind"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: 1 AS SegmentIsEntrySegment_ind",
+                                      "Derivation: SegmentIsEntrySegment_ind"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: CASE WHEN Segment_Flat_Seg = pg1segment THEN 1 ELSE 0 END AS SegmentIsEntrySegment_ind",
+                              "Derivation: SegmentIsEntrySegment_ind"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "sitearea",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_visits_added_cols",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_concise_all_visits"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: NULL as SiteArea",
+                                                      "DIGITAL_HT_APP.wrk_concise_visit_prod_dim UNION all ",
+                                                      "Union: YES",
+                                                      "Derivation: SiteArea",
+                                                      "Derivation: CASE WHEN Fcst_Hier_Node_Level_1_Name is not NULL then 'Product' else SiteArea END as SiteArea",
+                                                      "Derivation: CASE WHEN UPPER(page_subclass_detail_txt) LIKE 'APPLE MUSIC - %' THEN 'ServicesMusic' WHEN UPPER(page_subclass_detail_txt) LIKE 'NEWS APP - %' THEN 'ServicesNews' WHEN UPPER(page_subclass_detail_txt) LIKE 'APPLE TV PLUS - %' THEN 'ServicesTV' WHEN UPPER(page_subclass_detail_txt) LIKE 'APPLE ARCADE - %' THEN 'ServicesArcade' WHEN UPPER(page_subclass_detail_txt) LIKE 'ICLOUD - %' THEN 'ServicesiCloud' else SiteArea END as SiteArea",
+                                                      "Derivation: CASE WHEN UPPER(page_class_txt) = 'HOMEPAGE' THEN 'Homepage' else SiteArea END as SiteArea",
+                                                      "Derivation: CASE WHEN UPPER(pagename) = 'AOS: HOMEPAGE' THEN 'Store Homepage' else SiteArea END as SiteArea",
+                                                      "Derivation: case when SiteArea is null then 'OTHER' else SiteArea end as SiteArea"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: COALESCE(SiteArea,'ALL') as SiteArea",
+                                              "Derivation: SiteArea"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: SiteArea",
+                                      "Derivation: sitearea"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: SiteArea",
+                              "Derivation: sitearea"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "fcst_hier_node_level_1_name",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_visits_added_cols",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_concise_all_visits"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: NULL as Fcst_Hier_Node_Level_1_Name",
+                                                      "DIGITAL_HT_APP.wrk_concise_visit_prod_dim UNION all ",
+                                                      "Union: YES",
+                                                      "Derivation: Case WHEN Product_lob is not NULL THEN Product_lob else Fcst_Hier_Node_Level_1_Name end as Fcst_Hier_Node_Level_1_Name",
+                                                      "Derivation: Case WHEN UPPER(page_class_txt) = 'HOMEPAGE' then null WHEN UPPER(pagename) = 'AOS: HOMEPAGE' then null WHEN UPPER(pagename) like 'APPLE TV PLUS%' then null when UPPER(page_dqv_lob) in ('IPAD','IPHONE','MAC','WATCH') then page_dqv_lob when UPPER(page_dqv_lob) = 'APPLETV' then 'Accessory' when UPPER(Fcst_Hier_Node_Level_2_Name) in ('APPLE TV','AIRPODS','HOMEPOD') then 'Accessory' when UPPER(page_subclass_txt) = 'AIRTAG' then 'Accessory' when UPPER(page_subclass_txt) in ('AIRPODS','HOMEPOD') then 'Accessory' else Fcst_Hier_Node_Level_1_Name end as Fcst_Hier_Node_Level_1_Name",
+                                                      "Derivation: Fcst_Hier_Node_Level_1_Name",
+                                                      "Derivation: case when Fcst_Hier_Node_Level_1_Name is null and SiteArea is not null then 'NA' When SiteArea is null then 'NA' else Fcst_Hier_Node_Level_1_Name end as Fcst_Hier_Node_Level_1_Name"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: COALESCE(Fcst_Hier_Node_Level_1_Name , 'ALL') AS Fcst_Hier_Node_Level_1_Name",
+                                              "Derivation: Fcst_Hier_Node_Level_1_Name"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: Fcst_Hier_Node_Level_1_Name",
+                                      "Derivation: fcst_hier_node_level_1_name"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: Fcst_Hier_Node_Level_1_Name",
+                              "Derivation: fcst_hier_node_level_1_name"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "fcst_hier_node_level_2_name",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_visits_added_cols",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_concise_all_visits"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: NULL as Fcst_Hier_Node_Level_2_Name",
+                                                      "DIGITAL_HT_APP.wrk_concise_visit_prod_dim UNION all ",
+                                                      "Union: YES",
+                                                      "Derivation: Case WHEN Product_sub_lob is not NULL THEN Product_sub_lob else Fcst_Hier_Node_Level_2_Name end as Fcst_Hier_Node_Level_2_Name",
+                                                      "Derivation: Case WHEN UPPER(page_class_txt) = 'HOMEPAGE' then null WHEN UPPER(pagename) = 'AOS: HOMEPAGE' then null WHEN UPPER(pagename) like 'APPLE TV PLUS%' then null when UPPER(page_dqv_lob) in ('IPAD','IPHONE','MAC','WATCH') and refurb_ind=1 then page_dqv_lob||' Refurb/As Is' when UPPER(page_dqv_lob) not in ('IPAD','IPHONE','MAC','WATCH','APPLETV') and UPPER(page_subclass_txt) not in ('AIRTAG','AIRPODS','HOMEPOD') then Fcst_Hier_Node_Level_2_Name When UPPER(page_subclass_txt) = 'APPLETV' then 'Apple TV' When UPPER(page_subclass_txt) = 'IPADPRO' then 'iPad Pro' When UPPER(page_subclass_txt) = 'IPADMINI' then 'iPad Mini' When UPPER(page_subclass_txt) = 'IPAD AIR' then 'iPad Air' When UPPER(page_subclass_txt) = 'IPADAIR' then 'iPad 10 in Non Pro' When UPPER(page_subclass_txt) = 'IPAD' then 'iPad 10 in Non Pro' When UPPER(page_subclass_txt) = 'IPHONEXR' then 'iPhone XS/XS Max/XR' When UPPER(page_subclass_txt) = 'IPHONE SE' then 'iPhone SE (3rd Gen)' When UPPER(page_subclass_txt) = 'IPHONESE' then 'iPhone SE (2nd Gen)' When UPPER(page_subclass_txt) = 'IPHONE12PRO_12PROMAX' then 'iPhone 12 Pro/Pro Max' When UPPER(page_subclass_txt) = 'IPHONE12_12MINI' then 'iPhone 12/mini' When UPPER(page_subclass_txt) = 'IPHONE13PRO_13PROMAX' then 'iPhone 13 Pro/Pro Max' When UPPER(page_subclass_txt) = 'IPHONE13_13MINI' then 'iPhone 13/mini' When UPPER(page_subclass_txt) = 'IPHONE14PRO_14PROMAX' then 'iPhone 14 Pro/Pro Max' When UPPER(page_subclass_txt) = 'IPHONE14_14PLUS' then 'iPhone 14/14 plus' When UPPER(page_subclass_txt) = 'IPHONE11' then 'iPhone 11' When UPPER(page_subclass_txt) = 'MAC STUDIO DISPLAY' then 'Mac Studio Display' When UPPER(page_subclass_txt) = 'MAC STUDIO' then 'Mac Studio' When UPPER(page_subclass_txt) = 'MACPRO' then 'Mac Pro' When UPPER(page_subclass_txt) = 'MACMINI' then 'Mac Mini' When UPPER(page_subclass_txt) = 'MACBOOKPRO' then 'MacBook Pro' When UPPER(page_subclass_txt) = 'MACBOOKAIR' then 'MacBook Air' When UPPER(page_subclass_txt) = 'MAC' then 'Mac Accessories & Display' When UPPER(page_subclass_txt) = 'IMAC' then 'iMac' When UPPER(page_subclass_txt) = 'WATCH' and Page_Hit_Pst_Dt >= '2022-09-07' then 'Series 8' When UPPER(page_subclass_txt) = 'HERMES' and Page_Hit_Pst_Dt >= '2022-09-07' then 'Series 8' When UPPER(page_subclass_txt) = 'SPORT' and Page_Hit_Pst_Dt >= '2022-09-07' then 'Series 8' When UPPER(page_subclass_txt) = 'ULTRA' and Page_Hit_Pst_Dt >= '2022-09-07' then 'Ultra' When UPPER(page_subclass_txt) = 'WATCH' and Page_Hit_Pst_Dt >= '2021-09-14' then 'Series 7' When UPPER(page_subclass_txt) = 'WATCH' then 'Series 6' When UPPER(page_subclass_txt) = 'HERMES' and Page_Hit_Pst_Dt >= '2021-09-14' then 'Series 7' When UPPER(page_subclass_txt) = 'HERMES' then 'Series 6' When UPPER(page_subclass_txt) = 'AIRPODS' then 'AirPods' When UPPER(page_subclass_txt) = 'AIRTAG' then 'AirTag' When UPPER(page_subclass_txt) = 'HOMEPOD' then 'Homepod' when UPPER(page_dqv_lob) = 'IPAD' and UPPER(Fcst_Hier_Node_Level_2_Name) like 'IPAD%' then Fcst_Hier_Node_Level_2_Name when UPPER(page_dqv_lob) = 'IPHONE' and UPPER(Fcst_Hier_Node_Level_2_Name) like 'IPHO%' then Fcst_Hier_Node_Level_2_Name when UPPER(page_dqv_lob) = 'MAC' and UPPER(Fcst_Hier_Node_Level_2_Name) like any ('IMA%','MAC%') then Fcst_Hier_Node_Level_2_Name when UPPER(page_dqv_lob) = 'WATCH' and UPPER(Fcst_Hier_Node_Level_2_Name) like any ('SER%','WAT%','SE') then Fcst_Hier_Node_Level_2_Name when UPPER(page_dqv_lob) = 'APPLETV' and UPPER(Fcst_Hier_Node_Level_2_Name) like 'APP%' then Fcst_Hier_Node_Level_2_Name else null end as Fcst_Hier_Node_Level_2_Name",
+                                                      "Derivation: Fcst_Hier_Node_Level_2_Name",
+                                                      "Derivation: case when Fcst_Hier_Node_Level_2_Name is null and SiteArea is not null then 'NA' When SiteArea is null then 'NA' else Fcst_Hier_Node_Level_2_Name end as Fcst_Hier_Node_Level_2_Name"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: COALESCE(Fcst_Hier_Node_Level_2_Name , 'ALL') AS Fcst_Hier_Node_Level_2_Name",
+                                              "Derivation: Fcst_Hier_Node_Level_2_Name"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: Fcst_Hier_Node_Level_2_Name",
+                                      "Derivation: fcst_hier_node_level_2_name"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: Fcst_Hier_Node_Level_2_Name",
+                              "Derivation: fcst_hier_node_level_2_name"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "visits",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "children": [
+                                              {
+                                                  "name": "Step-5:",
+                                                  "isExpanded": false,
+                                                  "value": {
+                                                      "data": {
+                                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                          "SOURCE TABLE INFO": [
+                                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                          ],
+                                                          "SOURCE COLUMNS INFO": [
+                                                              "Derivation: SUM(1) AS visits",
+                                                              "Derivation: visits"
+                                                          ]
+                                                      }
+                                                  }
+                                              }
+                                          ],
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: SUM(1) AS visits",
+                                                      "Derivation: visits"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_flat_visit_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: MAX(visit_nr) -MIN(visit_nr) +1 AS visits",
+                                              "Derivation: visits"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: SUM(1) AS visits",
+                                      "Derivation: visits"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: SUM(1) AS visits",
+                              "Derivation: visits"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "store",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: SUM(Store_visit) AS Store",
+                                      "Derivation: store"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: SUM(Store_visit) AS Store",
+                              "Derivation: store"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "storeshopper",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: SUM(Store_Shopper) AS StoreShopper",
+                                      "Derivation: storeshopper"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: SUM(Store_Shopper) AS StoreShopper",
+                              "Derivation: storeshopper"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "shopper",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "children": [
+                                      {
+                                          "name": "Step-4:",
+                                          "isExpanded": false,
+                                          "value": {
+                                              "data": {
+                                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                                  "SOURCE TABLE INFO": [
+                                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                                  ],
+                                                  "SOURCE COLUMNS INFO": [
+                                                      "Derivation: SUM(NewShopper) AS Shopper",
+                                                      "Derivation: shopper"
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: SUM(NewShopper) AS Shopper",
+                                              "Derivation: shopper"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATVISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_flat_visit_inner"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: SUM(NewShopper_ind) AS Shopper",
+                                      "Derivation: Shopper"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_FLATSEGVISITS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_flat_visit_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: SUM(NewShopper_ind) AS Shopper",
+                              "Derivation: Shopper"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "discovery",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: MAX(CASE WHEN NewShopper_ind = 0 THEN 1 ELSE 0 END) AS Discovery",
+                                              "Derivation: Discovery"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: SUM(Discovery) AS Discovery",
+                                      "Derivation: discovery"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: SUM(Discovery) AS Discovery",
+                              "Derivation: discovery"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "cartadd",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: MAX(CASE WHEN UPPER(Event_type_txt) = 'CART ADD' AND NewShopper_ind = 1 THEN 1 ELSE 0 END) AS CartAdd",
+                                              "Derivation: CartAdd"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: SUM(CartAdd) AS CartAdd",
+                                      "Derivation: cartadd"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: SUM(CartAdd) AS CartAdd",
+                              "Derivation: cartadd"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "checkout",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: MAX(CASE WHEN UPPER(Page_Class_Txt) = 'CHECKOUT' AND NewShopper_ind = 1 THEN 1 ELSE 0 END) AS Checkout",
+                                              "Derivation: Checkout"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: SUM(Checkout) AS Checkout",
+                                      "Derivation: checkout"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: SUM(Checkout) AS Checkout",
+                              "Derivation: checkout"
+                          ]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "name": "thankyou",
+          "isExpanded": false,
+          "children": [
+              {
+                  "name": "Step-1:",
+                  "isExpanded": false,
+                  "children": [
+                      {
+                          "name": "Step-2:",
+                          "isExpanded": false,
+                          "children": [
+                              {
+                                  "name": "Step-3:",
+                                  "isExpanded": false,
+                                  "value": {
+                                      "data": {
+                                          "WORKTABLE NAME": "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner",
+                                          "SOURCE TABLE INFO": [
+                                              "DIGITAL_HT_APP.wrk_visits_added_cols"
+                                          ],
+                                          "SOURCE COLUMNS INFO": [
+                                              "Derivation: MAX(CASE WHEN UPPER(Event_type_txt) = 'THANK YOU' AND NewShopper_ind = 1 THEN 1 ELSE 0 END) AS ThankYou",
+                                              "Derivation: ThankYou"
+                                          ]
+                                      }
+                                  }
+                              }
+                          ],
+                          "value": {
+                              "data": {
+                                  "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS",
+                                  "SOURCE TABLE INFO": [
+                                      "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                                  ],
+                                  "SOURCE COLUMNS INFO": [
+                                      "Derivation: SUM(ThankYou) AS ThankYou",
+                                      "Derivation: thankyou"
+                                  ]
+                              }
+                          }
+                      }
+                  ],
+                  "value": {
+                      "data": {
+                          "WORKTABLE NAME": "DIGITAL_HT_APP.HT_VISITS_SEGMENTS",
+                          "SOURCE TABLE INFO": [
+                              "DIGITAL_HT_APP.wrk_ht_visit_and_seg_inner a"
+                          ],
+                          "SOURCE COLUMNS INFO": [
+                              "Derivation: SUM(ThankYou) AS ThankYou",
+                              "Derivation: thankyou"
+                          ]
+                      }
+                  }
+              }
+          ]
+      }
+  ]
+}
